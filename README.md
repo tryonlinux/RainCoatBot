@@ -4,7 +4,9 @@ Extremely Simple Telegram Bot to send me a message each morning on if I need to 
 
 ## Requirements
 
-- Axios >= **0.21.1**
+-  axios: ^1.4.0
+-  dotenv: ^16.3.0
+-  node-telegram-bot-api: ^0.61.0
 - [Open Weather API Key](https://openweathermap.org/) -- Free plan allows up to 1,000,000 calls/month & 60 calls/minute
 - [Telegram Bot and Channel](https://core.telegram.org/bots)
 
