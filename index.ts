@@ -31,9 +31,15 @@ const getWeather = async () => {
     const forecastList = response.data.list;
     const rainHours: string[] = [];
 
+    const today = new Date();
+    const todayStr = `${today.getFullYear()}-${String(
+      today.getMonth() + 1
+    ).padStart(2, '0')}-${String(today.getDate()).padStart(2, '0')}`;
+
     forecastList.forEach((item: any) => {
       const weather = item.weather[0].main;
-      if (weather.toLowerCase().includes('rain')) {
+      const forecastDate = item.dt_txt.split(' ')[0]; // get the date part of the date time string
+      if (weather.toLowerCase().includes('rain') && forecastDate === todayStr) {
         rainHours.push(item.dt_txt);
       }
     });
